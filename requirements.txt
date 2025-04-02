@@ -3,3 +3,4 @@ numpy==1.26.4
 scipy==1.14.0
 requests==2.32.3
 openai-whisper
+pytubefix==8.12.3

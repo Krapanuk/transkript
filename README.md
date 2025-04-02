@@ -1,7 +1,20 @@
-# (Meeting-)Transkript
+# Transkript
 
 Mit der transcribe.py ist es möglich, sich mit lokaler KI, ohne, dass Daten das eigene System verlassen, Meetings, Videos, ..., jeglichen gesprochenen Text in die Textdatei transkript.txt zu transkribieren.
-Um die transcribe.py nutzen zu können sind vorab folgende Dinge zu tun:
+
+Mit
+* transcribe.py
+  wird aus dem im System ankommenden Audio der Text sowohl
+  ** durchgängig in eine continuous.wav geschrieben, um später mit transcribe_audio.py "en block" extrahiert zu werden, also auch
+  ** schrittweise in 10-Sek.-Abschnitten iterativ transkribiert und "häppchenweise" in eine transkript.txt geschrieben
+* youtube_download_mp4.py
+  kann der Ton des kompletten YouTube-Videos als mp4 lokal gespeichert werden, um danach transkribiert zu werden mit
+* transcribe_audio.py 
+  kann den in der im Code genannten Audiodatei in eine transkript_full.txt transkribieren.
+
+# Vorbereitungen
+
+Um die Skripte nutzen zu können sind vorab folgende Dinge zu tun:
 
 ## Repo clonen
 - Dieses git repo clonen und 
