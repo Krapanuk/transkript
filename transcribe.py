@@ -7,8 +7,11 @@ from scipy.io.wavfile import write
 
 model = whisper.load_model("base") # Alternativen: tiny, base, small, medium, large
 
-def record_audio(duration=10, sample_rate=16000, device_index=22):
+def record_audio(duration=10, device_index=1):
     #print(sd.query_devices())
+    device_info = sd.query_devices(device_index, 'input')
+    sample_rate = device_info['default_samplerate']
+    sample_rate = int(sample_rate)
     print("Starte Aufnahme...")
     audio = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=1, device=device_index)
     sd.wait()

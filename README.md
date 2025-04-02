@@ -1,4 +1,13 @@
-# transkript
+# (Meeting-)Transkript
+
+Mit der transcribe.py ist es möglich, sich mit lokaler KI, ohne, dass Daten das eigene System verlassen, Meetings, Videos, ..., jeglichen gesprochenen Text in die Textdatei transkript.txt zu transkribieren.
+Um die transcribe.py nutzen zu können sind vorab folgende Dinge zu tun:
+
+## Repo clonen
+- Dieses git repo clonen und 
+- virtuelle-Umgebung aktivieren via
+-- python -m venv venv
+-- venv\Scripts\activate
 
 ## FFmpeg herunterladen
 - Pfad: ffmpeg.org/download.html#build-windows
@@ -6,7 +15,31 @@
 - Lade die "ffmpeg-git-essentials.7z"-ZIP-Datei herunter.
 - Scanne mit Virustotal: 
 - Entpacke die ZIP-Datei z. B. nach: C:\Entwicklung\ffmpeg\
--- Der Ordner sollte nun etwa so aussehen: C:\ffmpeg\bin\ffmpeg.exe
+-- Der Ordner sollte nun etwa so aussehen: C:\Entwicklung\ffmpeg\bin\ffmpeg.exe
 - Umgebungsvariable PATH aktualisieren und CMD neu starten (um die Aenderung zu uebernehmen)
 -- Umgebungsvariablen öffnen
 -- zu PATH => Neu: C:\Entwicklung\ffmpeg\bin\
+
+## requirements installieren
+Alle in der requirements.txt genannten Komponenten werden im Code der transcribe.py benötigt und müssen daher vorab installiert sein.
+
+## Stereomix aktivieren und nutzbar machen
+- In Windows, bspw. via Rechtsklick auf das Lautsprechersymbol in der Taskleiste, zu den "Soundeinstellungen" wechseln und
+- dort ganz unten "Weitere Soundeinstellungen" öffnen.
+- Den Reiter "Aufnahme" öffnen und 
+- in einen freien Bereich klicken, um "Deaktivierte Geräte anzeigen" zu aktivieren.
+- Nun sollte "Stereomix" erschienen sein:
+-- Diesen bitte aktivieren und
+-- am besten direkt als Standardkommunikationsgerät auswählen.
+- Falls USB-Soundgeräte angeschlossen sind, bspw. ein Headset, dies bitte trennen.
+- Nun mit dem Standard Windows "Audiorecorder" und gewähltem "Stereomix" als Eingang prüfen, ob das ins Mikrofon gesprochene, sowie bspw. der Text eines abgespielten YouTube-Videos aufgezeichnet werden.
+
+## ID von Stereomix finden
+Im Code der transcribe.py ist "print(sd.query_devices())" auskommentiert:
+Die Zeile bitte aktivieren und nach Erhalt der Übersicht bpsw. in CMD das Skript mit Strg+C abbrechen.
+Nun "device_index=" mit der Hardware-ID des Stereomix versorgen (bei mir ist es die "1")
+
+## Nun kann's losgehen
+Nun via python transcribe.py ausprobieren.
+Je nach Hardware kann die größe - und damit Qualität - des Whisper-Modells im Code gewählt werden (s. Kommentar):
+Ich hatte mich hier für "base" entschieden: model = whisper.load_model("base")
