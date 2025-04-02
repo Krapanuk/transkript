@@ -5,7 +5,7 @@ import tempfile
 import os
 from scipy.io.wavfile import write
 
-model = whisper.load_model("small") # Alternativen: tiny, base, small, medium, large
+model = whisper.load_model("base") # Alternativen: tiny, base, small, medium, large
 
 def record_audio(duration=10, sample_rate=16000, device_index=22):
     #print(sd.query_devices())
