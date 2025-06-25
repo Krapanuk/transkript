@@ -11,6 +11,8 @@ Mit
   kann der Ton des kompletten YouTube-Videos als mp4 lokal gespeichert werden, um danach transkribiert zu werden mit
 * transcribe_audio.py 
   kann den in der im Code genannten Audiodatei in eine transkript_full.txt transkribieren.
+* vimeoToText.py
+  kann das im Code via vimeo_url referenzierte Vimeo-Video direkt in Text umwandeln.
 
 # Vorbereitungen
 
