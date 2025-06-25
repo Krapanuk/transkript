@@ -1,7 +1,6 @@
 import whisper
 import subprocess
 import os
-from pathlib import Path
 
 def vimeo_to_text(vimeo_url, output_text="transcript.txt", temp_audio="temp_audio.mp3"):
     """
