@@ -7,11 +7,11 @@ Mit
   wird aus dem im System ankommenden Audio der Text sowohl
   * durchgängig in eine continuous.wav geschrieben, um später mit transcribe_audio.py "en block" extrahiert zu werden, also auch
   * schrittweise in 10-Sek.-Abschnitten iterativ transkribiert und "häppchenweise" in eine transkript.txt geschrieben
-* youtube_download_mp4.py
+* youtube_download_mp4.py\
   kann der Ton des kompletten YouTube-Videos als mp4 lokal gespeichert werden, um danach transkribiert zu werden mit
-* transcribe_audio.py 
+* transcribe_audio.py\
   kann den in der im Code genannten Audiodatei in eine transkript_full.txt transkribieren.
-* vimeoToText.py
+* vimeoToText.py\
   kann das im Code via vimeo_url referenzierte Vimeo-Video direkt in Text umwandeln.
 
 # Vorbereitungen
